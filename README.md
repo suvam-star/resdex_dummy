@@ -1,1 +1,0 @@
-# resdex_dummy
