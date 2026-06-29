@@ -1,0 +1,137 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* TalentDesk design system — replica of Naukri Talent Cloud (Resdex) */
+
+@layer base {
+  :root {
+    --background: 220 23% 97%;        /* page bg */
+    --foreground: 222 22% 14%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 22% 14%;
+    --card-hover: 220 30% 98%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 22% 14%;
+
+    --nav: 0 0% 100%;                 /* nav is WHITE */
+    --nav-foreground: 222 22% 14%;
+
+    --brand: 214 100% 50%;            /* #0066ff-ish */
+    --brand-foreground: 0 0% 100%;
+    --brand-soft: 214 100% 97%;
+    --brand-soft-foreground: 214 100% 42%;
+
+    --accent-tab: 12 100% 60%;        /* #ff5b3b red-orange tab underline */
+
+    --gradient-from: 270 90% 60%;     /* purple */
+    --gradient-to: 214 100% 50%;      /* blue */
+
+    --primary: 214 100% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 25% 96%;
+    --secondary-foreground: 222 22% 14%;
+
+    --muted: 220 25% 96%;
+    --muted-foreground: 220 9% 46%;
+
+    --accent: 214 100% 97%;
+    --accent-foreground: 214 100% 42%;
+
+    --success: 137 66% 30%;
+    --success-foreground: 0 0% 100%;
+    --warning: 32 95% 44%;
+    --warning-foreground: 0 0% 100%;
+    --danger: 12 100% 60%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 14% 90%;
+    --input: 220 14% 90%;
+    --ring: 214 100% 50%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222 22% 9%;
+    --foreground: 210 40% 98%;
+    --card: 222 22% 12%;
+    --card-foreground: 210 40% 98%;
+    --card-hover: 222 22% 15%;
+    --popover: 222 22% 12%;
+    --popover-foreground: 210 40% 98%;
+    --nav: 222 22% 12%;
+    --nav-foreground: 210 40% 98%;
+    --brand: 214 100% 60%;
+    --brand-foreground: 0 0% 100%;
+    --brand-soft: 222 40% 18%;
+    --brand-soft-foreground: 214 100% 80%;
+    --accent-tab: 12 100% 60%;
+    --primary: 214 100% 60%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 222 22% 16%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 222 22% 16%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 222 40% 18%;
+    --accent-foreground: 214 100% 80%;
+    --success: 137 60% 45%;
+    --success-foreground: 0 0% 100%;
+    --warning: 32 95% 55%;
+    --warning-foreground: 0 0% 100%;
+    --destructive: 0 62% 40%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 222 22% 20%;
+    --input: 222 22% 20%;
+    --ring: 214 100% 60%;
+  }
+}
+
+@layer base {
+  * { @apply border-border; }
+  html, body {
+    font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  }
+  body {
+    @apply bg-background text-foreground;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+@layer utilities {
+  .fade-in { animation: fadeIn 250ms ease-out; }
+  .slide-in { animation: slideIn 250ms ease-out; }
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(2px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes slideIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .gradient-text {
+    background-image: linear-gradient(90deg, hsl(var(--gradient-from)), hsl(var(--gradient-to)));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .corner-ribbon {
+    width: 0; height: 0;
+    border-top: 28px solid hsl(var(--brand));
+    border-right: 28px solid transparent;
+  }
+}
